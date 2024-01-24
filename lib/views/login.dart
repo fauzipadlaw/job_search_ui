@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:job_search_ui/components/login_form.dart';
 import 'package:job_search_ui/components/logo.dart';
 import 'package:job_search_ui/utils/colors.dart';
+import 'package:job_search_ui/views/signup.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -45,7 +46,12 @@ class Login extends StatelessWidget {
                   style: TextStyle(fontSize: 16),
                 ),
                 TextButton(
-                    onPressed: () => {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SignUp()),
+                      );
+                    },
                     child: const Text(
                       "Sign Up",
                       style: TextStyle(
