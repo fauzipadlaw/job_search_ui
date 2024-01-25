@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:job_search_ui/components/login_form.dart';
 import 'package:job_search_ui/components/logo.dart';
 import 'package:job_search_ui/utils/colors.dart';
+import 'package:job_search_ui/views/home.dart';
 import 'package:job_search_ui/views/signup.dart';
 
 class Login extends StatelessWidget {
@@ -32,7 +33,12 @@ class Login extends StatelessWidget {
               child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () => {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Home()),
+                        );
+                      },
                       child: const Text(
                         'Login',
                         style: TextStyle(fontWeight: FontWeight.bold),
