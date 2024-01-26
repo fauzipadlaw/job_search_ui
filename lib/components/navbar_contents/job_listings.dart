@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:job_search_ui/components/navbar_contents/job_listings_header.dart';
+import 'package:job_search_ui/components/navbar_contents/recent_jobs.dart';
 import 'package:job_search_ui/utils/colors.dart';
 
 class JobListings extends StatelessWidget {
@@ -8,61 +10,42 @@ class JobListings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const JobListingsHeader(),
         Container(
-          height: 205,
-          width: double.infinity,
-          color: yellow,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 60, left: 20),
-                child: Text(
-                  'Hi Mark 👋🏻',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(left: 20.0),
-                child: Text(
-                  "Find The Best Job Here!",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Autour One',
-                      fontSize: 22),
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                child: SizedBox(
-                  height: 50,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.only(top: 4),
-                      filled: true,
-                      alignLabelWithHint: true,
-                      fillColor: lightYellow,
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      prefixIcon: const Icon(
-                        Icons.search,
-                        color: lightBlack,
-                      ),
-                      hintText: 'Start searching for jobs',
-                      hintStyle: const TextStyle(
-                        color: lightBlack,
-                        fontSize: 18,
-                      ),
+          color: plainBackground,
+          height: MediaQuery.of(context).size.height - 295,
+          child: const DefaultTabController(
+            length: 2,
+            child: Column(
+              children: [
+                TabBar(
+                  dividerColor: plainBackground,
+                  labelColor: yellow,
+                  unselectedLabelColor: Colors.black38,
+                  indicatorColor: yellow,
+                  labelStyle:
+                      TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  tabs: [
+                    Tab(
+                      text: 'Recent Jobs',
                     ),
+                    Tab(
+                      text: 'Near You',
+                    )
+                  ],
+                ),
+                Expanded(
+                  child: TabBarView(
+                    children: [
+                      RecentJobs(),
+                      RecentJobs(),
+                    ],
                   ),
                 ),
-              )
-            ],
+              ],
+            ),
           ),
-        )
+        ),
       ],
     );
   }
