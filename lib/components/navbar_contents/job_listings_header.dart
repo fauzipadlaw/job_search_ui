@@ -25,7 +25,10 @@ class JobListingsHeader extends StatelessWidget {
             child: Text(
               "Find The Best Job Here!",
               style: TextStyle(
-                  color: Colors.black, fontFamily: 'Autour One', fontSize: 22),
+                color: Colors.black,
+                fontFamily: 'Autour One',
+                fontSize: 22,
+              ),
             ),
           ),
           Padding(

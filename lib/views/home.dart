@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_search_ui/components/navbar_contents/job_listings.dart';
+import 'package:job_search_ui/components/navbar_contents/profile.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -11,8 +12,8 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
     const JobListings(),
-    Container(),
-    Container(),
+    const Profile(),
+    const Profile()
   ];
 
   void _onItemTapped(int index) {
