@@ -36,33 +36,36 @@ class Profile extends StatelessWidget {
           ),
         ),
       ),
-      body: const SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: PhotoProfile(),
-            ),
-            ProfileSectionTitle(title: 'Contact Info'),
-            ProfileFieldRow(label: 'Full Name', value: 'Adrian Severin'),
-            ProfileFieldRow(label: 'Email', value: 'adrianseverin@gmail.com'),
-            ProfileFieldRow(label: 'Mobile Number', value: '+6532823232'),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Divider(),
-            ),
-            ProfileSectionTitle(title: 'Employment Information'),
-            ProfileFieldRow(
-              label: 'Resume',
-              value: 'My Resume.pdf',
-              documentDate: '11/06/20',
-            ),
-            ProfileFieldRow(
-              label: 'Cover Letter',
-              value: 'My cover letter final.pdf',
-              documentDate: '11/06/20',
-            ),
-          ],
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: PhotoProfile(),
+              ),
+              ProfileSectionTitle(title: 'Contact Info'),
+              ProfileFieldRow(label: 'Full Name', value: 'Adrian Severin'),
+              ProfileFieldRow(label: 'Email', value: 'adrianseverin@gmail.com'),
+              ProfileFieldRow(label: 'Mobile Number', value: '+6532823232'),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Divider(),
+              ),
+              ProfileSectionTitle(title: 'Employment Information'),
+              ProfileFieldRow(
+                label: 'Resume',
+                value: 'My Resume.pdf',
+                documentDate: '11/06/20',
+              ),
+              ProfileFieldRow(
+                label: 'Cover Letter',
+                value: 'My cover letter final.pdf',
+                documentDate: '11/06/20',
+              ),
+            ],
+          ),
         ),
       ),
     );
