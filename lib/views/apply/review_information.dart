@@ -46,31 +46,32 @@ class _ReviewInformationState extends State<ReviewInformation> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          ProfileSectionTitle(title: 'Contact Info'),
-                          Center(
+                          const ProfileSectionTitle(title: 'Contact Info'),
+                          const Center(
                             child: PhotoProfile(
                               size: 80,
                               addButton: false,
                               verticalMargin: 8,
                             ),
                           ),
-                          ProfileFieldRow(
+                          const ProfileFieldRow(
                               label: 'Full Name', value: 'Adrian Severin'),
-                          ProfileFieldRow(
+                          const ProfileFieldRow(
                               label: 'Email', value: 'adrianseverin@gmail.com'),
-                          ProfileFieldRow(
+                          const ProfileFieldRow(
                               label: 'Mobile Number', value: '+6532823232'),
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 20),
                             child: Divider(),
                           ),
-                          ProfileSectionTitle(title: 'Employment Information'),
-                          ProfileFieldRow(
+                          const ProfileSectionTitle(
+                              title: 'Employment Information'),
+                          const ProfileFieldRow(
                             label: 'Resume',
                             value: 'My Resume.pdf',
                             documentDate: '11/06/20',
                           ),
-                          ProfileFieldRow(
+                          const ProfileFieldRow(
                             label: 'Cover Letter',
                             value: 'My cover letter final.pdf',
                             documentDate: '11/06/20',
