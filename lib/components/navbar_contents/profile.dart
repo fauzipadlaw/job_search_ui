@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_search_ui/components/photo_profile.dart';
-import 'package:job_search_ui/components/profiel_field_row.dart';
+import 'package:job_search_ui/components/profile_field_row.dart';
 import 'package:job_search_ui/components/profile_section_title.dart';
 
 class Profile extends StatelessWidget {
