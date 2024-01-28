@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:multi_dropdown/multiselect_dropdown.dart';
+
 import 'package:job_search_ui/components/apply_edu_xp_section.dart';
 import 'package:job_search_ui/components/education_form.dart';
 import 'package:job_search_ui/components/step_progress.dart';
@@ -70,24 +72,60 @@ class _EducationExperienceState extends State<EducationExperience> {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(
-                  height: 50,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.only(top: 8, left: 12),
-                      hintStyle: const TextStyle(color: light),
-                      prefixIcon: const Icon(
-                        Icons.search,
-                        color: light,
-                      ),
-                      border: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
+                Stack(
+                  children: [
+                    MultiSelectDropDown(
+                      showClearIcon: false,
+                      suffixIcon: null,
+                      onOptionSelected: (options) {
+                        debugPrint(options.toString());
+                      },
+                      padding: const EdgeInsets.only(left: 40),
+                      options: const <ValueItem>[
+                        ValueItem(label: 'Figma', value: '1'),
+                        ValueItem(label: 'Flutter', value: '2'),
+                        ValueItem(label: 'PHP', value: '3'),
+                        ValueItem(label: 'Java', value: '4'),
+                        ValueItem(label: 'React', value: '5'),
+                        ValueItem(label: 'HTML', value: '6'),
+                      ],
+                      maxItems: 3,
+                      disabledOptions: const [
+                        ValueItem(label: 'Figma', value: '1')
+                      ],
+                      hint: '',
+                      selectedOptionBackgroundColor: yellow,
+                      selectedOptionTextColor: Colors.white,
+                      inputDecoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
+                      selectionType: SelectionType.multi,
+                      chipConfig: const ChipConfig(
+                          wrapType: WrapType.wrap,
+                          backgroundColor: yellow,
+                          labelColor: Colors.white,
+                          radius: 8,
+                          deleteIcon: Icon(Icons.close)),
+                      dropdownHeight: 300,
+                      optionTextStyle: const TextStyle(fontSize: 16),
+                      selectedOptionIcon: const Icon(
+                        Icons.check_circle,
+                        color: Colors.white,
                       ),
                     ),
-                  ),
+                    const Positioned(
+                        top: 12,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 8.0),
+                          child: Icon(
+                            Icons.search,
+                            color: light,
+                            size: 30,
+                          ),
+                        ))
+                  ],
                 ),
               ],
             ),
