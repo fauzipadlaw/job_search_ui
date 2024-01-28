@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 
 class PhotoProfile extends StatelessWidget {
-  const PhotoProfile({super.key});
+  final double size;
+  final bool addButton;
+  final double verticalMargin;
+  const PhotoProfile(
+      {super.key,
+      this.size = 120,
+      this.addButton = true,
+      this.verticalMargin = 20});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(vertical: 20),
+          margin: EdgeInsets.symmetric(vertical: verticalMargin),
           alignment: Alignment.center,
-          height: 120,
-          width: 120,
+          height: size,
+          width: size,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
           ),
@@ -22,26 +29,27 @@ class PhotoProfile extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
-          bottom: 20,
-          right: 0,
-          child: Container(
-            height: 30,
-            width: 30,
-            decoration: BoxDecoration(
-              color: Colors.brown,
-              borderRadius: BorderRadius.circular(100),
-              border: Border.all(
+        if (addButton)
+          Positioned(
+            bottom: 20,
+            right: 0,
+            child: Container(
+              height: 30,
+              width: 30,
+              decoration: BoxDecoration(
+                color: Colors.brown,
+                borderRadius: BorderRadius.circular(100),
+                border: Border.all(
+                  color: Colors.white,
+                  width: 2,
+                ),
+              ),
+              child: const Icon(
+                Icons.add,
                 color: Colors.white,
-                width: 2,
               ),
             ),
-            child: const Icon(
-              Icons.add,
-              color: Colors.white,
-            ),
-          ),
-        )
+          )
       ],
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:job_search_ui/components/apply_document_section.dart';
 import 'package:job_search_ui/components/document_option_box.dart';
 import 'package:job_search_ui/components/step_progress.dart';
+import 'package:job_search_ui/views/apply/education_experience.dart';
 
 class DocumentApplication extends StatefulWidget {
   final String companyName;
@@ -117,7 +118,12 @@ class _DocumentApplicationState extends State<DocumentApplication> {
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => EducationExperience(
+                              companyName: widget.companyName,
+                            )));
+                  },
                   child: const Text(
                     'Proceed',
                     style: TextStyle(
