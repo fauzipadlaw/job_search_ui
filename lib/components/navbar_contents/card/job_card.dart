@@ -17,7 +17,6 @@ class JobCard extends StatelessWidget {
       context: context,
       enableDrag: true,
       isScrollControlled: true,
-      backgroundColor: Colors.transparent,
       builder: (BuildContext context) {
         return SizedBox(
           height: MediaQuery.of(context).size.height * 0.7,
@@ -76,12 +75,12 @@ class JobCard extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    child: Container(
-                      margin:
-                          const EdgeInsets.only(top: 10, left: 20, right: 20),
-                      alignment: Alignment.topLeft,
-                      child: const SingleChildScrollView(
-                        child: Column(
+                    child: SingleChildScrollView(
+                      child: Container(
+                        margin:
+                            const EdgeInsets.only(top: 10, left: 20, right: 20),
+                        alignment: Alignment.topLeft,
+                        child: const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -114,6 +113,9 @@ class JobCard extends StatelessWidget {
                               style: TextStyle(
                                 color: Colors.black,
                               ),
+                            ),
+                            SizedBox(
+                              height: 100,
                             ),
                           ],
                         ),
