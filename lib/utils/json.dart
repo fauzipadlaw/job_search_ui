@@ -1,7 +1,7 @@
 final jobsList = [
   {
     'id': 1,
-    'companyName': 'SLACK',
+    'companyName': 'Slack',
     'position': 'Senior Product Manager',
     'salary': '\$6k-\$8k/month',
     'location': 'East Singapore',
@@ -9,7 +9,7 @@ final jobsList = [
   },
   {
     'id': 2,
-    'companyName': 'CRYPTO.COM',
+    'companyName': 'Crypto.com',
     'position': 'Front-End Developer',
     'salary': '\$6k-\$8k/month',
     'location': 'West Singapore',
@@ -17,7 +17,7 @@ final jobsList = [
   },
   {
     'id': 3,
-    'companyName': 'AMAZON',
+    'companyName': 'Amazon',
     'position': 'Product Owner',
     'salary': '\$6k-\$8k/month',
     'location': 'East Singapore',
@@ -25,7 +25,7 @@ final jobsList = [
   },
   {
     'id': 4,
-    'companyName': 'ASANA',
+    'companyName': 'Asana',
     'position': 'Business Analyst',
     'salary': '\$6k-\$8k/month',
     'location': 'East Singapore',
@@ -33,7 +33,7 @@ final jobsList = [
   },
   {
     'id': 5,
-    'companyName': 'GOOGLE',
+    'companyName': 'Google',
     'position': 'Senior Product Designer',
     'salary': '\$6k-\$8k/month',
     'location': 'East Singapore',

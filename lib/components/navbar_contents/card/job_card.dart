@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_search_ui/utils/colors.dart';
-import 'package:job_search_ui/views/home.dart';
+import 'package:job_search_ui/views/apply/document_application.dart';
 
 class JobCard extends StatelessWidget {
   final Map<String, dynamic> job;
@@ -46,7 +46,7 @@ class JobCard extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Text(
-                      job['companyName'],
+                      job['companyName'].toString().toUpperCase(),
                       style: const TextStyle(
                         color: yellow,
                         fontSize: 16,
@@ -144,10 +144,13 @@ class JobCard extends StatelessWidget {
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
+                              Navigator.of(context).pop();
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Home()),
+                                    builder: (context) => DocumentApplication(
+                                          companyName: job['companyName'],
+                                        )),
                               );
                             },
                             child: const Text(
@@ -200,7 +203,7 @@ class JobCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  job['companyName'],
+                  job['companyName'].toString().toUpperCase(),
                   style: const TextStyle(
                       fontSize: 16, color: yellow, fontWeight: FontWeight.bold),
                 ),

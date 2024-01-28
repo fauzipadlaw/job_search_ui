@@ -6,3 +6,4 @@ const brown = Color(0xff4b3c2f);
 const light = Color(0xffccc5c0);
 const lightBlack = Color(0xffad7e54);
 const plainBackground = Color(0xfffffcfa);
+const yellowDisable = Color(0xfffff5ec);
